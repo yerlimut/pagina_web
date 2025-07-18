@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo de Málaga</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f5f5f5;
+    }
+    .card-img-top {
+      object-fit: cover;
+      height: 300px;
+    }
+    .seccion-detalle {
+      display: none;
+      padding: 2rem;
+    }
+    .visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ENCABEZADO -->
+<header class="bg-primary text-white text-center py-4">
+  <h1>Catálogo Turístico de Málaga</h1>
+  <p class="lead">Haz clic en una imagen para conocer más</p>
+</header>
+
+<!-- CATÁLOGO PRINCIPAL -->
+<div id="catalogo" class="container my-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    <!-- Producto 1 -->
+    <div class="col">
+      <div class="card h-100">
+        <a href="#malaga" onclick="mostrarSeccion('malaga')">
+          <img src="imagenes/2.jpg" class="card-img-top" alt="Málaga">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Málaga</h5>
+          <p class="card-text">Municipio lleno de historia en Santander.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Producto 2 -->
+    <div class="col">
+      <div class="card h-100">
+        <a href="#parque" onclick="mostrarSeccion('parque')">
+          <img src="imagenes/Malaga.jpg" class="card-img-top" alt="Parque">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Parque Principal</h5>
+          <p class="card-text">Centro social rodeado de arquitectura colonial.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="col">
+      <div class="card h-100">
+        <a href="#catedral" onclick="mostrarSeccion('catedral')">
+          <img src="imagenes/1.jpg" class="card-img-top" alt="Catedral">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">La Catedral</h5>
+          <p class="card-text">Símbolo de fe y arquitectura local.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agrega más productos aquí siguiendo el mismo patrón -->
+    
+  </div>
+</div>
+
+<!-- SECCIONES DETALLE (como páginas internas) -->
+
+<!-- Málaga -->
+<div id="malaga" class="seccion-detalle container">
+  <h2 class="text-primary">Málaga</h2>
+  <img src="imagenes/2.jpg" class="img-fluid my-3 rounded shadow" alt="Málaga">
+  <p>Málaga es el corazón de la provincia de García Rovira, un municipio rico en historia y cultura. Su gente, sus calles y su arquitectura lo hacen único en Santander.</p>
+  <button class="btn btn-outline-primary" onclick="volverAlCatalogo()">← Volver al catálogo</button>
+</div>
+
+<!-- Parque -->
+<div id="parque" class="seccion-detalle container">
+  <h2 class="text-success">Parque Principal</h2>
+  <img src="imagenes/Malaga.jpg" class="img-fluid my-3 rounded shadow" alt="Parque">
+  <p>El Parque Principal es el alma del municipio. Rodeado por cafés, comercio local y arquitectura colonial, es el sitio favorito para los encuentros sociales.</p>
+  <button class="btn btn-outline-success" onclick="volverAlCatalogo()">← Volver al catálogo</button>
+</div>
+
+<!-- Catedral -->
+<div id="catedral" class="seccion-detalle container">
+  <h2 class="text-warning">La Catedral</h2>
+  <img src="imagenes/1.jpg" class="img-fluid my-3 rounded shadow" alt="Catedral">
+  <p>La Catedral de Málaga destaca por su elegancia y su valor simbólico en la vida religiosa de la comunidad. Un verdadero ícono arquitectónico.</p>
+  <button class="btn btn-outline-warning" onclick="volverAlCatalogo()">← Volver al catálogo</button>
+</div>
+
+<!-- Agrega más secciones similares para cada producto -->
+
+<!-- SCRIPT PARA CAMBIAR SECCIONES -->
+<script>
+  function mostrarSeccion(id) {
+    document.getElementById('catalogo').style.display = 'none';
+
+    // Ocultar todas las secciones
+    const secciones = document.querySelectorAll('.seccion-detalle');
+    secciones.forEach(sec => sec.classList.remove('visible'));
+
+    // Mostrar solo la seleccionada
+    const seccionActual = document.getElementById(id);
+    if (seccionActual) {
+      seccionActual.classList.add('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  function volverAlCatalogo() {
+    const secciones = document.querySelectorAll('.seccion-detalle');
+    secciones.forEach(sec => sec.classList.remove('visible'));
+    document.getElementById('catalogo').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>

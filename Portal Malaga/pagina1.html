@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo de Málaga</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f5f5f5;
+    }
+    .card-img-top {
+      object-fit: cover;
+      height: 300px;
+    }
+    .seccion-detalle {
+      display: none;
+      padding: 2rem;
+    }
+    .visible {
+      display: block;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+<header class="bg-primary text-white text-center py-4">
+  <h1>Catálogo Turístico de Málaga</h1>
+  <p class="lead">Haz clic en una imagen para conocer más</p>
+</header>
+
+<div id="catalogo" class="container my-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    <!-- 1. Málaga -->
+    <div class="col">
+      <div class="card h-100">
+        <a href="#malaga" onclick="mostrarSeccion('malaga')">
+          <img src="imagenes/2.jpg" class="card-img-top" alt="Málaga">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Málaga</h5>
+          <p class="card-text">Municipio lleno de historia en Santander.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Parque Principal -->
+    <div class="col">
+      <div class="card h-100">
+        <a href="#parque" onclick="mostrarSeccion('parque')">
+          <img src="imagenes/Malaga.jpg" class="card-img-top" alt="Parque">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Parque Principal</h5>
+          <p class="card-text">Centro social rodeado de arquitectura colonial.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Catedral -->
+    <div class="col">
+      <div class="card h-100">
+        <a href="#catedral" onclick="mostrarSeccion('catedral')">
+          <img src="imagenes/1.jpg" class="card-img-top" alt="Catedral">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">La Catedral</h5>
+          <p class="card-text">Símbolo de fe y arquitectura local.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Estatua Simbólica -->
+    <div class="col">
+      <div class="card h-100">
+        <a href="#estatua" onclick="mostrarSeccion('estatua')">
+          <img src="imagenes/ESTATUA.png" class="card-img-top" alt="Estatua">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Estatua Simbólica</h5>
+          <p class="card-text">Homenaje a la historia de Málaga.</p>
+        </div>
+      </div>
+    </div>
+    <!-- 5. Rosario de Málaga -->
+    <div class="col">
+      <div class="card h-100">
+        <a href="#rosario" onclick="mostrarSeccion('rosario')">
+          <img src="imagenes/Rosario.jpg" class="card-img-top" alt="Rosario">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Rosario de Málaga</h5>
+          <p class="card-text">Tradición religiosa que recorre las calles del municipio.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Monumento Histórico -->
+    <div class="col">
+      <div class="card h-100">
+        <a href="#monumento" onclick="mostrarSeccion('monumento')">
+          <img src="imagenes/monumento.png" class="card-img-top" alt="Monumento">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Monumento Histórico</h5>
+          <p class="card-text">Estructura conmemorativa que representa la identidad local.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Hospital de Málaga -->
+    <div class="col">
+      <div class="card h-100">
+        <a href="#hospital" onclick="mostrarSeccion('hospital')">
+          <img src="imagenes/hospital.jpg" class="card-img-top" alt="Hospital">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Hospital Local</h5>
+          <p class="card-text">Centro de atención médica moderna y accesible para todos.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Templo San Antonio -->
+    <div class="col">
+      <div class="card h-100">
+        <a href="#templo" onclick="mostrarSeccion('templo')">
+          <img src="imagenes/templo católico de San Antonio.jpg" class="card-img-top" alt="Templo">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Templo de San Antonio</h5>
+          <p class="card-text">Iglesia centenaria y lugar de encuentro espiritual.</p>
+        </div>
+      </div>
+    </div>
+        <!-- 9. Sagrado Corazón -->
+    <div class="col">
+      <div class="card h-100">
+        <a href="#corazon" onclick="mostrarSeccion('corazon')">
+          <img src="imagenes/sagrado corazon.jpg" class="card-img-top" alt="Sagrado Corazón">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Sagrado Corazón</h5>
+          <p class="card-text">Representación religiosa tradicional en lo alto del municipio.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Alcaldía -->
+    <div class="col">
+      <div class="card h-100">
+        <a href="#alcaldia" onclick="mostrarSeccion('alcaldia')">
+          <img src="imagenes/alcaldia.png" class="card-img-top" alt="Alcaldía">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Alcaldía Municipal</h5>
+          <p class="card-text">Edificio institucional que rige el municipio de Málaga.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. Aeropuerto -->
+    <div class="col">
+      <div class="card h-100">
+        <a href="#aeropuerto" onclick="mostrarSeccion('aeropuerto')">
+          <img src="imagenes/aereopuerto.jpg" class="card-img-top" alt="Aeropuerto">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Aeropuerto Regional</h5>
+          <p class="card-text">Conexión aérea estratégica para Santander.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12. Terminal de Cotrans -->
+    <div class="col">
+      <div class="card h-100">
+        <a href="#terminal" onclick="mostrarSeccion('terminal')">
+          <img src="imagenes/terminal.jpg" class="card-img-top" alt="Terminal">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">Terminal de Cotrans</h5>
+          <p class="card-text">Transporte terrestre eficiente para la región.</p>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- Fin del catálogo -->
+</div>
+
+<!-- 🔹 Sección Detalle de Málaga -->
+<div id="malaga" class="seccion-detalle container text-center">
+  <h2 class="mb-3">Málaga</h2>
+
+  <img src="imagenes/2.jpg" class="img-fluid my-3 rounded shadow" alt="Imagen de Málaga">
+
+  <p>
+    Málaga es el corazón de la provincia de García Rovira, rica en historia y cultura.<br>
+    Es un municipio colombiano, capital de la provincia de García Rovira ubicada al sur oriente del departamento de Santander sobre la Troncal Central del Norte y a 124 km de distancia de Bucaramanga.<br>
+    Se encuentran tres variedades de climas: páramo, templado y cálido.<br><br>
+    <strong>Elevación:</strong> 2.235 m<br>
+    <strong>Alcalde:</strong> Rubén Darío Moreno Méndez (2024-2027)<br>
+    <strong>Gentilicio:</strong> Malagueño, -a
+  </p>
+
+  <!-- 🔸 Mapa de Google -->
+  <div class="mapa my-4">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15850.155151897292!2d-72.74010658911338!3d6.703896353743926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e69aa18a8b7dc07%3A0x9d6020771b8cf78c!2sM%C3%A1laga%2C%20Santander!5e0!3m2!1ses!2sco!4v1752844835306!5m2!1ses!2sco" 
+      width="100%" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <button class="btn btn-outline-primary mb-4" onclick="volverAlCatalogo()">← Volver</button>
+</div>
+
+
+<!-- 🔹 Sección Detalle del Parque Principal de Málaga -->
+<div id="parque" class="seccion-detalle container text-center">
+  <h2 class="mb-3">Parque Principal de Málaga</h2>
+
+  <img src="imagenes/Malaga.jpg" class="img-fluid my-3 rounded shadow" alt="Parque Principal de Málaga">
+
+  <p>
+    El Parque Principal de Málaga es el punto de encuentro por excelencia para los habitantes del municipio.<br>
+    Rodeado de arquitectura colonial, tiendas, iglesias y sitios culturales, este parque es un espacio lleno de historia y vida comunitaria.<br><br>
+    Es un lugar ideal para caminar, descansar, disfrutar de la gastronomía local y participar en eventos públicos.
+  </p>
+
+  <!-- 🔸 Mapa del Parque Principal -->
+  <div class="mapa my-4">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.5728033351666!2d-72.73528012418278!3d6.699710671088871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e69ab96f8f627fd%3A0x9c33b13f0a901785!2sParque%20Principal%20de%20M%C3%A1laga!5e0!3m2!1ses!2sco!4v1752844925126!5m2!1ses!2sco" 
+      width="100%" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <button class="btn btn-outline-primary mb-4" onclick="volverAlCatalogo()">← Volver</button>
+</div>
+
+
+<!-- 🔹 Sección Detalle de la Catedral de Málaga -->
+<div id="catedral" class="seccion-detalle container text-center">
+  <h2 class="mb-3">Catedral de la Inmaculada Concepción</h2>
+
+  <img src="imagenes/catedral.jpg" class="img-fluid my-3 rounded shadow" alt="Catedral de Málaga">
+
+  <p>
+    La Catedral de la Inmaculada Concepción es uno de los principales íconos religiosos y arquitectónicos de Málaga, Santander.<br>
+    Con un estilo neogótico, esta catedral es un lugar de encuentro espiritual, historia y tradición para los malagueños.<br><br>
+    Se encuentra ubicada frente al Parque Principal y es el escenario de celebraciones religiosas importantes.
+  </p>
+
+  <!-- 🔸 Mapa de la Catedral -->
+  <div class="mapa my-4">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.572151851136!2d-72.73307163112189!3d6.69979086242082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e69aa220850295d%3A0x1c959b8a378a07e6!2sCatedral%20de%20la%20Inmaculada%20Concepci%C3%B3n!5e0!3m2!1ses!2sco!4v1752845281206!5m2!1ses!2sco" 
+      width="100%" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <button class="btn btn-outline-primary mb-4" onclick="volverAlCatalogo()">← Volver</button>
+</div>
+
+
+<div id="estatua" class="seccion-detalle container">
+  <h2>Estatua Simbólica</h2>
+  <img src="imagenes/ESTATUA.png" class="img-fluid my-3 rounded shadow">
+  <p>Una figura icónica que representa el espíritu del municipio.</p>
+  En Málaga, Santander, la estatua más destacada es la del Prócer Custodio García Rovira, un reconocido líder de la independencia colombiana.<br> 
+  Esta estatua se encuentra ubicada en el municipio de Málaga, que es la capital de la provincia de García Rovira en el departamento de Santander.<br>
+  Custodio García Rovira fue un abogado, gobernador y miembro del Triunvirato Presidencial del Gobierno del Congreso de las Provincias Unidas,<br>
+   además de presidente de la república. Fue fusilado en 1816. La estatua en su honor es un monumento importante en la ciudad de Málaga y un símbolo de su legado histórico. 
+  <button class="btn btn-outline-secondary" onclick="volverAlCatalogo()">← Volver</button>
+</div>
+
+<div id="rosario" class="seccion-detalle container">
+  <h2>Rosario de Málaga</h2>
+  <img src="imagenes/Rosario.jpg" class="img-fluid my-3 rounded shadow">
+  <p>Tradición religiosa vivida por generaciones en procesiones comunitarias.</p>
+  <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.5639412857627!2d-72.73519022418274!3d6.700801421075877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e69aa189a5569bd%3A0x6727b2ef66ec0025!2sColegio%20Oficial%20Nuestra%20Se%C3%B1ora%20Del%20Rosario!5e0!3m2!1ses!2sco!4v1752846442854!5m2!1ses!2sco" 
+  width="100%" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+  <button class="btn btn-outline-dark" onclick="volverAlCatalogo()">← Volver</button>
+</div>
+
+<div id="monumento" class="seccion-detalle container">
+  <h2>Monumento Histórico</h2>
+  <img src="imagenes/monumento.png" class="img-fluid my-3 rounded shadow">
+  <p>Conmemoración de los eventos que marcaron a Málaga.</p>
+  <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.5639412857627!2d-72.73519022418274!3d6.700801421075877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e69aa189a5569bd%3A0x6727b2ef66ec0025!2sColegio%20Oficial%20Nuestra%20Se%C3%B1ora%20Del%20Rosario!5e0!3m2!1ses!2sco!4v1752846442854!5m2!1ses!2sco" 
+  width="100%" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+  <button class="btn btn-outline-info" onclick="volverAlCatalogo()">← Volver</button>
+</div>
+
+<div id="hospital" class="seccion-detalle container">
+  <h2>Hospital Local</h2>
+  <img src="imagenes/hospital.jpg" class="img-fluid my-3 rounded shadow">
+  <p>Un centro de salud moderno y accesible para todos los habitantes.</p>
+  <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.552591378365!2d-72.73203382418268!3d6.702198121059243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e69aa19acf66467%3A0xcf4a97c26d97b42e!2sHospital%20Regional%20de%20Garc%C3%ADa%20Rovira!5e0!3m2!1ses!2sco!4v1752847196238!5m2!1ses!2sco" 
+  width="100%" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+  <button class="btn btn-outline-danger" onclick="volverAlCatalogo()">← Volver</button>
+</div>
+
+<div id="templo" class="seccion-detalle container">
+  <h2>Templo San Antonio</h2>
+  <img src="imagenes/templo católico de San Antonio.jpg" class="img-fluid my-3 rounded shadow">
+  <p>Uno de los templos más antiguos de la región, dedicado a San Antonio.</p>
+  <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.9679399134125!2d-72.73469681954566!3d6.698694032039398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e69aa201a17c4b9%3A0x71d35f6573af1bbb!2sAsilo%20San%20Antonio%20M%C3%A1laga!5e0!3m2!1ses!2sco!4v1752847596526!5m2!1ses!2sco" 
+  width="100%" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+  <button class="btn btn-outline-primary" onclick="volverAlCatalogo()">← Volver</button>
+</div>
+
+<div id="corazon" class="seccion-detalle container">
+  <h2>Sagrado Corazón</h2>
+  <img src="imagenes/sagrado corazon.jpg" class="img-fluid my-3 rounded shadow">
+  <p>Escultura religiosa en lo alto del municipio, símbolo de fe y guía.</p>
+  <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.5947434398113!2d-72.7310976!3d6.697009499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e69aa1f0f878be3%3A0x8299ba21d52f75b3!2sIglesia%20Sagrado%20Coraz%C3%B3n!5e0!3m2!1ses!2sco!4v1752848102011!5m2!1ses!2sco" 
+  width="100%" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+  <button class="btn btn-outline-danger" onclick="volverAlCatalogo()">← Volver</button>
+</div>
+
+<div id="alcaldia" class="seccion-detalle container">
+  <h2>Alcaldía Municipal</h2>
+  <img src="imagenes/alcaldia.png" class="img-fluid my-3 rounded shadow">
+  <p>Centro administrativo y punto de encuentro para gestiones oficiales.</p>
+  <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.5750615456545!2d-72.73295569999999!3d6.699432699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e69aa18abf7295f%3A0x5ac3cce2d1f1be45!2sAlcald%C3%ADa%20Municipal%20de%20M%C3%A1laga!5e0!3m2!1ses!2sco!4v1752848224809!5m2!1ses!2sco" 
+  width="100%" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+  <button class="btn btn-outline-secondary" onclick="volverAlCatalogo()">← Volver</button>
+</div>
+
+<div id="aeropuerto" class="seccion-detalle container">
+  <h2>Aeropuerto Regional</h2>
+  <img src="imagenes/aereopuerto.jpg" class="img-fluid my-3 rounded shadow">
+  <p>Entrada aérea que conecta Málaga con otras regiones del país.</p>
+  <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.529927761767!2d-72.7300453!3d6.7049862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e69aa166f5c3d3b%3A0x7be793963dd70b3e!2sAeropuerto%20Jer%C3%B3nimo%20de%20Aguayo!5e0!3m2!1ses!2sco!4v1752848484312!5m2!1ses!2sco" 
+  width="100%" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+  <button class="btn btn-outline-dark" onclick="volverAlCatalogo()">← Volver</button>
+</div>
+
+<div id="terminal" class="seccion-detalle container">
+  <h2>Terminal de Cotrans</h2>
+  <img src="imagenes/terminal.jpg" class="img-fluid my-3 rounded shadow">
+  <p>Facilita el transporte intermunicipal y el flujo turístico.</p>
+  <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.557036878643!2d-72.7323785!3d6.7016511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e69aa1889dbd377%3A0x30928ce0ac7a9bca!2sTerminal%20de%20Transporte%20Cotrans%20M%C3%A1laga!5e0!3m2!1ses!2sco!4v1752848805926!5m2!1ses!2sco" 
+  width="100%" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+  <button class="btn btn-outline-info" onclick="volverAlCatalogo()">← Volver</button>
+</div>
+
+<!-- 🔧 Script de navegación -->
+<script>
+  function mostrarSeccion(id) {
+    document.getElementById('catalogo').style.display = 'none';
+    document.querySelectorAll('.seccion-detalle').forEach(sec => sec.classList.remove('visible'));
+    const seccion = document.getElementById(id);
+    if (seccion) {
+      seccion.classList.add('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  function volverAlCatalogo() {
+    document.querySelectorAll('.seccion-detalle').forEach(sec => sec.classList.remove('visible'));
+    document.getElementById('catalogo').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+  <div class="container">
+    <p class="mb-1">&copy; 2025 Catálogo Turístico de Málaga, Santander</p>
+    <p class="mb-3">Desarrollado por yerli blanco</p>
+  </div>
+
+
+</body>
+</html>
+
